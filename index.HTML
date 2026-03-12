@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3em;
+      color: #ff4081;
+      margin-top: 50px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: inline-block;
+      padding: 30px;
+      margin-top: 40px;
+    }
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      font-size: 3em;
+      animation: floatUp 10s linear infinite;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-120vh); opacity: 0; }
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 1em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy Birthday! ORRRIII 🎂</h1>
+  <div class="card">
+    <p>Selamat ulang tahun! Semoga hari ini penuh kebahagiaan, tawa, dan kenangan indah.</p>
+  </div>
+  <footer>
+    Dibuat dengan ❤️ untukmu
+  </footer>
+
+  <script>
+    // Membuat balon muncul secara acak
+    const colors = ["🎈","🎉","🎊"];
+    function createBalloon() {
+      const balloon = document.createElement("div");
+      balloon.className = "balloon";
+      balloon.textContent = colors[Math.floor(Math.random() * colors.length)];
+      balloon.style.left = Math.random() * window.innerWidth + "px";
+      balloon.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(balloon);
+      setTimeout(() => balloon.remove(), 10000);
+    }
+    setInterval(createBalloon, 1000);
+  </script>
+</body>
+</html>
